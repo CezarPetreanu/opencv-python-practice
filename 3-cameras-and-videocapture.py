@@ -15,7 +15,7 @@ while True:
     if (cv2.waitKey(1) == ord('q')):
         break
 
-print("Four frames, top-right frame flipped")
+print("Four frames, different flips")
 while True:
     ret, frame = cap.read()
 
@@ -27,9 +27,9 @@ while True:
     image = np.zeros(frame.shape, np.uint8)
     small_frame = cv2.resize(frame, (0, 0), fx=0.5, fy=0.5)
     image[0:height//2, 0:width//2] = small_frame
-    image[0:height//2, width//2:width] = cv2.flip(small_frame, 1)
-    image[height//2:height, 0:width//2] = small_frame
-    image[height//2:height, width//2:width] = small_frame
+    image[0:height//2, width//2:width] = cv2.flip(small_frame, -1)
+    image[height//2:height, 0:width//2] = cv2.flip(small_frame, 0)
+    image[height//2:height, width//2:width] = cv2.flip(small_frame, 1)
 
     cv2.imshow("Webcam", image)
 

@@ -7,7 +7,6 @@ face_cascade = cv2.CascadeClassifier(
 eye_cascade = cv2.CascadeClassifier(
     cv2.data.haarcascades+"haarcascade_eye.xml")
 
-googly_eye = cv2.imread("assets/googly_eye.png", 1)
 showEyes = False
 
 while True:

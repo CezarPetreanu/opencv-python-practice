@@ -1,1 +1,1 @@
-
+    eyes = eye_cascade.detectMultiScale(gray, 1.2, 5)
